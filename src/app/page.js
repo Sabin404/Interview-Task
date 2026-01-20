@@ -12,7 +12,7 @@ export default async function Home() {
 
   const categories = await getCategories();
   const products = await getProducts();
-  console.log(products);
+  // console.log(products);
 
   return (
     <>
