@@ -9,7 +9,7 @@ export default function CategorySection({ categories = [] }) {
   const displayedCategories = show ? categories : categories.slice(0, 6);
 
   return (
-    <section className="px-4 sm:px-6 lg:px-10 pb-12">
+    <section className="px-4 sm:px-6 lg:px-10 pb-12 container mx-auto">
       <div className="flex items-center justify-between py-6">
         <h1 className="text-2xl font-semibold">Categories</h1>
 

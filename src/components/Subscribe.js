@@ -5,9 +5,14 @@ import img from "@/assets/bg.png";
 
 const Subscribe = () => {
   const [email, setEmail] = useState("");
+  const [error, setError] = useState(null);
 
   const handleSubscribe = () => {
-    if (!email) return;
+    if (!email) {
+      setError("Email is required");
+      setTimeout(() => setError(null), 3000);
+      return;
+    }
     localStorage.setItem("subscribedEmail", email);
     setEmail("");
     alert("Subscribed!");
@@ -43,11 +48,12 @@ const Subscribe = () => {
           />
           <button
             onClick={handleSubscribe}
-            className="bg-black text-white px-5 py-2 rounded-md w-full sm:w-auto"
+            className="bg-black text-white px-5 py-2 rounded-md w-full sm:w-auto hover:cursor-pointer hover:bg-black/80"
           >
             Subscribe
           </button>
         </div>
+        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ import {
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <header className="bg-white flex justify-between items-center p-5 text-black relative pr-8 shadow-b-lg">
+    <header className="bg-white flex justify-between items-center p-5 text-black relative pr-8 shadow-b-lg container mx-auto">
       <h1 className="text-3xl font-lobster font-medium pl-8">Ecom</h1>
       <nav className={`hidden md:flex gap-6 font-medium `}>
         <a href="#">Home</a>

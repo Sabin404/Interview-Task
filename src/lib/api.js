@@ -11,11 +11,12 @@ export async function getCategories() {
   return data;
 }
 
-export async function getProducts() {
-  const res = await fetch(`${BASE_URL}/products?limit=20`, {
+export const LIMIT = 4;
+
+export async function getProducts(page = 1) {
+  const res = await fetch(`${BASE_URL}/products?limit=${LIMIT}&page=${page}`, {
     cache: "no-store",
   });
-
   const data = await res.json();
-  return data.data;
+  return data;
 }
